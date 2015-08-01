@@ -43,7 +43,10 @@ namespace PInvokeTest
     [DllImport("NativeLib.dll")]
     private static extern void get_string(StringBuilder buf, int len);
 
-      [DllImport("NativeLib.dll")]
-    private static extern void takes_an_int_array(int[] intArray, int len);
+    [DllImport("NativeLib.dll")]
+    private static extern void takes_an_int_array(
+        [Out, MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] int[] intArray,
+        int len
+        );
   }
 }
