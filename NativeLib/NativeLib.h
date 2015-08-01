@@ -8,6 +8,12 @@ extern "C" {
 __declspec(dllexport)
 void print_line(const char* str);
 
+__declspec(dllexport)
+void get_string(char* buf, int len);
+
+__declspec(dllexport)
+void takes_an_int_array(int* buf, int len);
+
 #ifdef __cplusplus
 }
 #endif
