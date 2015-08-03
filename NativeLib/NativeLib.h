@@ -14,6 +14,12 @@ void get_string(char* buf, int len);
 __declspec(dllexport)
 void takes_an_int_array(int* buf, int len);
 
+__declspec(dllexport)
+void managed_ptr_class(void* pManagedPtr);
+
+__declspec(dllexport)
+void managed_ptr_struct(void* pManagedPtr);
+
 #ifdef __cplusplus
 }
 #endif
