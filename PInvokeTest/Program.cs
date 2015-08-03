@@ -43,16 +43,17 @@ namespace PInvokeTest
             print_line("Hello PInvoke!!!");
             Console.WriteLine();
 
+            // unmanaged に配列を渡して壊してみる
             var buf = new StringBuilder(5);
             var bufCanary = new StringBuilder(5);
-            get_string(buf, buf.Capacity );
+            get_string(buf, buf.Capacity + 5);  // StringBuilder は壊せない
 
             Console.WriteLine("buf:" + buf + "[EOB] " + buf.Capacity);
             Console.WriteLine("canary:" + bufCanary + "[EOB] " + bufCanary.Capacity);
 
             var intBuf = new int[5];
             var intBufCanary = new int[5];
-            takes_an_int_array(intBuf, intBuf.Length + 5);
+            takes_an_int_array(intBuf, intBuf.Length + 5);  // 壊せる
 
             for (int i = 0; i < intBuf.Length; i++)
             {
