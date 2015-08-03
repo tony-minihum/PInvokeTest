@@ -20,6 +20,9 @@ void managed_ptr_class(void* pManagedPtr);
 __declspec(dllexport)
 void managed_ptr_struct(void* pManagedPtr);
 
+__declspec(dllexport)
+void managed_ptr_if(void* pManagedPtr);
+
 #ifdef __cplusplus
 }
 #endif

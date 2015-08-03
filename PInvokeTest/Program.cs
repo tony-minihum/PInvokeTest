@@ -87,6 +87,7 @@ namespace PInvokeTest
             managed_ptr_struct(ref ms);
             var ms2 = (ManagedStruct)msw.ManagedStruct;
             managed_ptr_struct(ref ms2);
+            managed_ptr_if(msw.ManagedStruct);
 
             Console.WriteLine("\n\nPress any key...");
             Console.ReadKey();
@@ -109,5 +110,8 @@ namespace PInvokeTest
 
         [DllImport("NativeLib.dll")]
         private static extern void managed_ptr_struct(ref ManagedStruct managedObject);
+
+        [DllImport("NativeLib.dll")]
+        private static extern void managed_ptr_if(IManagedStruct managedObject);
     }
 }

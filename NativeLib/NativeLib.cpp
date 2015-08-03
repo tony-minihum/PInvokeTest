@@ -55,3 +55,9 @@ void managed_ptr_struct(void* pManagedPtr)
 	managed_ptr(pManagedPtr);
 }
 
+__declspec(dllexport)
+void managed_ptr_if(void* pManagedPtr)
+{
+	managed_ptr(pManagedPtr);
+}
+
